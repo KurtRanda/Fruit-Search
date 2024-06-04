@@ -1,0 +1,90 @@
+/* Reset some default styles */
+* {
+    /* box-sizing: border-box; */
+    margin: 0;
+    padding: 0;
+}
+
+:focus {
+    outline: none;
+}
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* center content on page, more appealing to user */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: linear-gradient(to left, #cd5f0a, #fdf90f);
+    /* gradient background to match mockup */
+}
+
+/* Style the input to have full width, padding, and rounded corners with matching gradient background */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background: linear-gradient(to left, #cd5f0a, #ebd94b);
+    color: Black;
+}
+
+/* help placeholder text stand out  */
+input::placeholder {
+    color: Black;
+}
+/* set for absolute positioning of suggestions and centered */
+.search-container {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+}
+
+/* Suggestions appear right below input and made with overflow to scroll results */
+.search-container input,
+.search-container .suggestions {
+    width: 100%;
+}
+
+.search-container .suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    background-color:linear-gradient(to left, #cd5f0a, #ebd94b);
+    border: 1px, solid, #d4d4d4;
+    border-top: none;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* added boarder and background styling for list and items */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.has-suggestions {
+    border: 1px solid #d4d4d4;
+}
+
+ul li {
+    padding: 10px;
+    cursor: pointer;
+    background-color:linear-gradient(to left, #cd5f0a, #ebd94b);
+    border-bottom: 1px solid #d4d4d4;
+}
+
+ul li:hover,
+ul li.autocomplete-active {
+    background-color:linear-gradient(to left, #cd5f0a, #ebd94b);
+}
